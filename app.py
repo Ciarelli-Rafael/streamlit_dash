@@ -625,6 +625,7 @@ dol = pega_cotacao_dol()
 dol = float(dol)     # Convert string to float
 
 dol = round(dol,2)
+print(dol)
 
 # --- Sidebar ---
 st.sidebar.title("R.C Tech")
