@@ -611,7 +611,7 @@ def pega_cotacao_dol():
     response = requests.get(url)
     x = response.json()
     print(x)
-    st.write("DEBUG resposta AwesomeAPI:", data)
+    st.write("DEBUG resposta AwesomeAPI:", x)
     return x['USDBRL']['bid']
 
 
