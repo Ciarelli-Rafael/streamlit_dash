@@ -692,6 +692,15 @@ if gerar_tabela:
     #----------------------------------------------------------------------------------#
 
 
+
+    df_vumi_completo['Prêmio Anual $'] = pd.to_numeric(df_vumi_completo['Prêmio Anual $'], errors='coerce')
+    df_vumi_hospitalar['Prêmio Anual $'] = pd.to_numeric(df_vumi_hospitalar['Prêmio Anual $'], errors='coerce')
+    df_ever_completo['Prêmio Anual $'] = pd.to_numeric(df_ever_completo['Prêmio Anual $'], errors='coerce')
+    df_ever_hospitalar['Prêmio Anual $'] = pd.to_numeric(df_ever_hospitalar['Prêmio Anual $'], errors='coerce')
+
+
+
+    
     #Valores em Reais
     df_vumi_completo['Valor Mensal R$'] = ((df_vumi_completo['Prêmio Anual $']/12) * dol).round().astype(int)
     df_vumi_hospitalar['Valor Mensal R$'] = ((df_vumi_hospitalar['Prêmio Anual $']/12) * dol).round().astype(int)
