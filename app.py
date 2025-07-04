@@ -612,8 +612,6 @@ def pega_cotacao_dol():
         url = "https://economia.awesomeapi.com.br/last/USD-BRL"
         response = requests.get(url)
         x = response.json()
-        print(x)
-        st.write("DEBUG resposta AwesomeAPI:", x)
         return x['USDBRL']['bid']
     except:
         info = yf.Ticker("USDBRL=X").info
