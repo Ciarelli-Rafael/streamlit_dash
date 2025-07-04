@@ -605,10 +605,13 @@ def verificar_regra(param_list, df):
 
     return df
 
+@st.cache_data(ttl=60)          # evita bater no limite chamando no máximo 1× por minuto
 def pega_cotacao_dol():
     url = "https://economia.awesomeapi.com.br/last/USD-BRL"
     response = requests.get(url)
     x = response.json()
+    print(x)
+    st.write("DEBUG resposta AwesomeAPI:", data)
     return x['USDBRL']['bid']
 
 
