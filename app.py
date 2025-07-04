@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import psycopg2
 import requests
+import yfinance as yf
 
 def descobrir_faixa_etaria_best_doctors(idade):
     if (idade>=0 and idade<=17):
@@ -607,13 +608,18 @@ def verificar_regra(param_list, df):
 
 @st.cache_data(ttl=60)          # evita bater no limite chamando no máximo 1× por minuto
 def pega_cotacao_dol():
-    url = "https://economia.awesomeapi.com.br/last/USD-BRL"
-    response = requests.get(url)
-    x = response.json()
-    print(x)
-    st.write("DEBUG resposta AwesomeAPI:", x)
-    return x['USDBRL']['bid']
+    try:
+        url = "https://economia.awesomeapi.com.br/last/USD-BRL"
+        response = requests.get(url)
+        x = response.json()
+        print(x)
+        st.write("DEBUG resposta AwesomeAPI:", x)
+        return x['USDBRL']['bid']
+    except:
+        info = yf.Ticker("USDBRL=X").info
+        return info['bid']
 
+        
 
 #Leitura das tabelas deparas
 vumi, ever_completo, ever_hospitalar, vumi_hospitalar, best_doctors_completo = leitura_tabela()
