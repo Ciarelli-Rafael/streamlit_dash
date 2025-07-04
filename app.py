@@ -319,8 +319,10 @@ def leitura_tabela():
         FROM public.vumi_completo;
     """)
     plan=cursor.fetchall()
+    print(plan)
 
     vumi=pd.DataFrame(plan, columns=["id", "Age", 2000, 5000, 10000, 20000, 50000])
+    print(vumi)
 
     plan=cursor.execute(f""" 
         SELECT *
