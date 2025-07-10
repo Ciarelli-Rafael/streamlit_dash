@@ -918,13 +918,13 @@ col1, col2 = st.columns([2, 3])  # col1 ocupa 2x o espaço da col2
 # Primeira coluna: título e tabela
 with col1:
 
-    st.subheader("VUMI Completo")
+    st.subheader("VUMI Universal Vip Choice - Completo")
     st.dataframe(df_vumi_completo)
 
 # Segunda coluna: título e outra tabela
 with col2:
 
-    st.subheader("VUMI Hospitalar")
+    st.subheader("VUMI Direct Vip Choice - Hospitalar")
     st.dataframe(df_vumi_hospitalar)
 
 
@@ -934,13 +934,13 @@ col1, col2 = st.columns([2, 3])  # col1 ocupa 2x o espaço da col2
 # Primeira coluna: título e tabela
 with col1:
 
-    st.subheader("EVER Completo")
+    st.subheader("Ever Everywhere - Completo")
     st.dataframe(df_ever_completo)
 
 # Segunda coluna: título e outra tabela
 with col2:
 
-    st.subheader("EVER Hospitalar")
+    st.subheader("Ever EverPresent - Hospitalar")
     st.dataframe(df_ever_hospitalar)
 
 st.subheader("Best Doctors Completo")
